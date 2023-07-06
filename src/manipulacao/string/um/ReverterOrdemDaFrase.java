@@ -12,6 +12,39 @@ public class ReverterOrdemDaFrase {
 		this.frase = frase;
 	}
 	
+	
+	public String letraMaiusculaNaPrimeiraFrase() {
+		StringBuffer buffer = new StringBuffer();
+		String[] strings = frase.split("[.]");
+		List<String> listaDaStringSeparada = new ArrayList<>(Arrays.asList(strings));
+		//listaDaStringSeparada.add(frase.split("[.?]").toString());
+		for (String interacao : listaDaStringSeparada) {
+			String string = interacao.strip();
+			String maiuscula = string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
+			buffer.append(maiuscula+". ");
+		}
+		
+		interrogacao(buffer.toString());
+		
+	
+		System.out.println(buffer.toString());
+		
+		return null;
+	}
+	
+	private void interrogacao(String string) {
+		StringBuffer buffer = new StringBuffer();
+		String[] strings = frase.split("[?]");
+		List<String> listaDaStringSeparada = new ArrayList<>(Arrays.asList(strings));
+		for (String interacao : listaDaStringSeparada) {
+			String stringStripada = interacao.strip();
+			String maiuscula = stringStripada.substring(0, 1).toUpperCase() + stringStripada.substring(1).toLowerCase();
+			buffer.append(maiuscula+"? ");
+		}
+		System.out.println(buffer.toString());
+	}
+
+
 	public String verificandoSeEPalindroma() {
 		List<Character> buffer = new ArrayList<>();
 		frase.chars().forEach(letra -> buffer.add((char) letra));
@@ -59,6 +92,9 @@ public class ReverterOrdemDaFrase {
 
 		ReverterOrdemDaFrase palindroma = new ReverterOrdemDaFrase("babad");
 		System.out.println(palindroma.verificandoSeEPalindroma());
+
+		ReverterOrdemDaFrase maiuscula = new ReverterOrdemDaFrase("hello. how are you? i`m fine, thank you.");
+		maiuscula.letraMaiusculaNaPrimeiraFrase();
 
 		
 		//System.out.println(frase.reverterPalavraDentroDaFrase());
