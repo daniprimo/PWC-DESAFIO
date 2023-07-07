@@ -12,6 +12,10 @@ public class ReverterOrdemDaFrase {
 		this.frase = frase;
 	}
 	
+	public boolean isAnagramaDePalindromo(String stringEspecial) {
+		return stringEspecial.toString().equals(new StringBuffer().append(stringEspecial.toString()).reverse().toString());
+	}
+	
 	
 	public String letraMaiusculaNaPrimeiraFrase() {
 		StringBuffer buffer = new StringBuffer();
@@ -24,15 +28,17 @@ public class ReverterOrdemDaFrase {
 			buffer.append(maiuscula+". ");
 		}
 		
-		interrogacao(buffer.toString());
+		String ponto = buffer.toString();
+		
+		String string = interrogacao(ponto);
 		
 	
-		System.out.println(buffer.toString());
+		System.out.println(ponto);
 		
 		return null;
 	}
 	
-	private void interrogacao(String string) {
+	private String interrogacao(String string) {
 		StringBuffer buffer = new StringBuffer();
 		String[] strings = frase.split("[?]");
 		List<String> listaDaStringSeparada = new ArrayList<>(Arrays.asList(strings));
@@ -41,7 +47,11 @@ public class ReverterOrdemDaFrase {
 			String maiuscula = stringStripada.substring(0, 1).toUpperCase() + stringStripada.substring(1).toLowerCase();
 			buffer.append(maiuscula+"? ");
 		}
-		System.out.println(buffer.toString());
+		String string2 = buffer.toString().substring(0, buffer.length()-2);
+		System.out.println(string2);
+		
+		
+		return buffer.toString().substring(0, buffer.length()-2);
 	}
 
 
@@ -53,7 +63,6 @@ public class ReverterOrdemDaFrase {
 		for (int i = 0; i < buffer.size(); i++) {
 			stringEspecial.append(buffer.get(i));
 			if (i > 1 && stringEspecial.toString().equals(new StringBuffer().append(stringEspecial.toString()).reverse().toString())) {
-				System.out.println("deu bom");
 						
 				return stringEspecial.toString();
 				
@@ -95,6 +104,11 @@ public class ReverterOrdemDaFrase {
 
 		ReverterOrdemDaFrase maiuscula = new ReverterOrdemDaFrase("hello. how are you? i`m fine, thank you.");
 		maiuscula.letraMaiusculaNaPrimeiraFrase();
+		
+
+		ReverterOrdemDaFrase anagrama = new ReverterOrdemDaFrase("rececar");
+		System.out.println(anagrama.isAnagramaDePalindromo("racecar"));
+
 
 		
 		//System.out.println(frase.reverterPalavraDentroDaFrase());
