@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import manipulacao.string.encapsulamento.DesafioPWC;
+import manipulacao.string.model.InverterOrdemDaFrase;
+
 public class ReverterOrdemDaFrase {
 
 	private String frase;
@@ -110,7 +113,8 @@ public class ReverterOrdemDaFrase {
 		System.out.println(anagrama.isAnagramaDePalindromo("racecar"));
 
 
-		
+		DesafioPWC reverterOrdem = new InverterOrdemDaFrase("Hello, Word! OpenAl is amazing");
+		System.out.println(reverterOrdem.executar());
 		//System.out.println(frase.reverterPalavraDentroDaFrase());
 	}
 
