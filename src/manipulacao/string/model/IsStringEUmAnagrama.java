@@ -16,7 +16,6 @@ public class IsStringEUmAnagrama extends Frase implements PalindromaService {
 
 	@Override
 	public boolean isPalindroma() {
-		// TODO Auto-generated method stub
 		return getFrase().toString().equals(new StringBuffer().append(getFrase().toString()).reverse().toString());
 	}
 

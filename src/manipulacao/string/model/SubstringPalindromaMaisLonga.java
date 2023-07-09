@@ -15,15 +15,16 @@ public class SubstringPalindromaMaisLonga extends Frase implements DesafioPWC {
 	@Override
 	public String executar() {
 		// TODO Auto-generated method stub
-		List<Character> buffer = new ArrayList<>();
-		getFrase().chars().forEach(letra -> buffer.add((char) letra));
-		StringBuffer stringEspecial = new StringBuffer();
+		List<Character> listaDasLetras = new ArrayList<>();
+		getFrase().chars().forEach(letra -> listaDasLetras.add((char) letra));
+		StringBuffer concatenandoAsLetrasParaFormaremFrases = new StringBuffer();
 		
-		for (int i = 0; i < buffer.size(); i++) {
-			stringEspecial.append(buffer.get(i));
-			if (i > 1 && stringEspecial.toString().equals(new StringBuffer().append(stringEspecial.toString()).reverse().toString())) {
+		for (int i = 0; i < listaDasLetras.size(); i++) {
+			concatenandoAsLetrasParaFormaremFrases.append(listaDasLetras.get(i));
+			if (i > 1 && concatenandoAsLetrasParaFormaremFrases.toString()
+					.equals(new StringBuffer().append(concatenandoAsLetrasParaFormaremFrases.toString()).reverse().toString())) {
 						
-				return stringEspecial.toString();
+				return concatenandoAsLetrasParaFormaremFrases.toString();
 				
 			}
 		}

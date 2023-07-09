@@ -12,9 +12,9 @@ public class ExcluirLetraReptidaDeUmaFrase extends Frase implements DesafioPWC {
 	@Override
 	public String executar() {
 		// TODO Auto-generated method stub
-		StringBuffer buffer = new StringBuffer();
-		getFrase().chars().distinct().forEach(letra -> buffer.append((char) letra));						
-		return buffer.toString();
+		StringBuffer concatenarAsLetras = new StringBuffer();
+		getFrase().chars().distinct().forEach(letra -> concatenarAsLetras.append((char) letra));						
+		return concatenarAsLetras.toString();
 	}
 
 }

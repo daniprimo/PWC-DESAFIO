@@ -28,6 +28,7 @@ public class PrimeiraLetraDaFraseEmMaiuscula extends Frase implements DesafioPWC
 		
 		if (concatenarAsStringsSeparaas.toString().contains("?")) {
 			StringBuffer retornoDasStrings = new StringBuffer();
+			retornoDasStrings.append("OutPut: ");
 			String[] separandoAsStrinsDaInterrogacao = concatenarAsStringsSeparaas.toString().split("[?]");
 			String ponto = concatenarAsStringsSeparaas.toString();
 			retornoDasStrings.append(separandoAsStrinsDaInterrogacao[0]);
@@ -37,7 +38,7 @@ public class PrimeiraLetraDaFraseEmMaiuscula extends Frase implements DesafioPWC
 		}
 		
 		
-		return concatenarAsStringsSeparaas.toString();
+		return "OutPut: "+concatenarAsStringsSeparaas.toString();
 	}
 	
 	private String interrogacao(String string) {

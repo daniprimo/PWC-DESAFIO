@@ -13,15 +13,15 @@ public class InverterOrdemDaFrase extends Frase implements DesafioPWC {
 	}
 
 	public String executar() {
-		String[] split = getFrase().split(" ");
-		List<String> lista = new ArrayList<>(Arrays.asList(split));
-		StringBuffer concatenar = new StringBuffer();	
-		int size = lista.size();
+		String[] separandoTodasPalavrasDaFrase = getFrase().split(" ");
+		List<String> listaDasPalavras = new ArrayList<>(Arrays.asList(separandoTodasPalavrasDaFrase));
+		StringBuffer concatenarAsPalvrasNaOrdemInvertida = new StringBuffer();	
+		int size = listaDasPalavras.size();
 		int iterador = size - 1;
 		for (int i = iterador; i >= 0; i--) {
-			concatenar.append(lista.get(i)+" ");
+			concatenarAsPalvrasNaOrdemInvertida.append(listaDasPalavras.get(i)+" ");
 		}			
-		return concatenar.toString();
+		return concatenarAsPalvrasNaOrdemInvertida.toString();
 	}
 	
 	
