@@ -1,11 +1,16 @@
 package manipulacao.string.model;
 
-public abstract class Frase  {
+public abstract class Frase {
 
 	private String frase;
 
 	public Frase(String frase) {
+
 		this.frase = frase;
+	}
+
+	public Frase() {
+		super();
 	}
 
 	public String getFrase() {
@@ -15,6 +20,5 @@ public abstract class Frase  {
 	public void setFrase(String frase) {
 		this.frase = frase;
 	}
-	
 
 }
