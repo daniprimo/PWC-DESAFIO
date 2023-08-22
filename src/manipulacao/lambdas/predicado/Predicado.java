@@ -2,6 +2,8 @@ package manipulacao.lambdas.predicado;
 
 import java.util.function.Predicate;
 
+import manipulacao.lambdas.Produto;
+
 public class Predicado {
 
 	public static void main(String[] args) {
