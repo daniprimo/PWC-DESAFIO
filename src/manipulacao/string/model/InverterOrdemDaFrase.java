@@ -1,4 +1,4 @@
-package manipulacao.string.model;
+	package manipulacao.string.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,6 +38,7 @@ public class InverterOrdemDaFrase extends Frase implements DesafioPWC {
 		for (int i = iterador; i >= 0; i--) {
 			concatenarAsPalvrasNaOrdemInvertida.append(listaDasPalavras.get(i)+" ");
 		}			
+		
 		return concatenarAsPalvrasNaOrdemInvertida.toString();
 	}
 	
